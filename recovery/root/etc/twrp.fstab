@@ -1,0 +1,15 @@
+# Android fstab file.
+# By Alexenferman
+# mount_point   fstype    	device                                      flags
+
+/splash 		emmc 		/dev/block/bootdevice/by-name/splash 		flags=backup=1;display="Splash Screen"
+/boot 			emmc		/dev/block/bootdevice/by-name/boot 			flags=display="Boot";backup=1
+/recovery 		emmc		/dev/block/bootdevice/by-name/recovery 		flags=display="Recovery";backup=1
+/system			ext4		/dev/block/bootdevice/by-name/system 		flags=display="System";backup=1
+/system_image 	emmc 		/dev/block/bootdevice/by-name/system		flags=display="System Image";backup=1    
+/cache 			ext4		/dev/block/bootdevice/by-name/cache 		flags=display="Cache"
+/data 			ext4		/dev/block/bootdevice/by-name/userdata		length=-16384
+/misc 			emmc		/dev/block/bootdevice/by-name/misc 			flags=display="Misc";backup=0
+/firmware 		vfat 		/dev/block/bootdevice/by-name/modem 		flags=display="Modem";backup=1      
+
+/sdcard 		vfat 		/dev/block/mmcblk1p1 /dev/block/mmcblk1 	flags=display="Micro SDcard";storage;wipeingui;removable
